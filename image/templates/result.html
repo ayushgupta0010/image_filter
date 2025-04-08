@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Processed Image</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-gray-100">
+        <div class="container mx-auto p-6">
+            <div
+                class="max-w-lg mx-auto bg-white rounded-xl shadow-md overflow-hidden"
+            >
+                <div class="p-6 text-center">
+                    <h1 class="text-2xl font-bold text-gray-800 mb-4">
+                        Your Processed Image
+                    </h1>
+                    <img
+                        src="{{ image_url }}"
+                        alt="Processed Image"
+                        class="mx-auto mb-4 max-w-full rounded shadow-md"
+                    />
+                    <div class="flex justify-center space-x-4">
+                        <a
+                            href="{{ image_url }}"
+                            download
+                            class="inline-block bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                            target="_blank"
+                        >
+                            Download Image
+                        </a>
+                        <a
+                            href="{% url 'image_upload' %}"
+                            class="inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        >
+                            Process Another Image
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
